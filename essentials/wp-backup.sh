@@ -5,7 +5,7 @@ source "$DIR/utils.sh"
 
 echo "${LIGHTBLUE}platform: $PLATFORM \n"
 
-if [[ -d "$help" ]]; then
+if [[ ! -z "$help" ]]; then
   echo "${GREEN}Example:"
   echo "${LIGHTGREEN}./wp-backup.sh --site /var/www/website --db database --out output.zip"
   exit 1

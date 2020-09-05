@@ -17,14 +17,16 @@ case "$(uname -s)" in
      ;;
 
    *)
-     PLATFORM='Other'
+     PLATFORM='other'
      ;;
 esac
 
 # Parse arguments passed to file and assign to a variable (with the same name)
 while [ $# -gt 0 ]; do
 
-   if [[ $1 == *"--"* ]]; then
+   if [[ $1 == "--help" ]]; then
+      declare help="yes"
+   elif [[ $1 == *"--"* ]]; then
         v="${1/--/}"
         declare $v="$2"
    fi
@@ -33,9 +35,17 @@ while [ $# -gt 0 ]; do
 done
 
 # Predefined color schemes
-GREEN='\033[0;32m'
-LIGHTGREEN='\033[1;32m'
-LIGHTBLUE='\033[01;34m'
+if [ $PLATFORM == macos ]; then
+  GREEN='\033[0;32m'
+  LIGHTGREEN='\033[1;32m'
+  LIGHTBLUE='\033[01;34m'
+fi
+
+if [ $PLATFORM == linux ]; then
+  GREEN='\e[32m'
+  LIGHTGREEN='\e[92m'
+  LIGHTBLUE='\e[94m'
+fi
 
 # Usage: cmd_install zip "brew install zip" "sudo apt-get install zip"
 # $1 - Command
