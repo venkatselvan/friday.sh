@@ -2,7 +2,7 @@
 "It's almost weekend and i'm done for the week" said no developer ever. Well it's hard to get all things done by friday and have a peaceful weekend, but atleast you can keep those micro tasks from bugging you while you try to sleep. With friday.sh you can now rest for the weekend (hopefully?).
 
 ### Motivation
-![motivation](https://raw.githubusercontent.com/venkatselvan/friday.sh/motivation.png)
+![motivation](https://raw.githubusercontent.com/venkatselvan/friday.sh/master/motivation.png)
 
 ### Getting Started
 1. Clone this repo into your "Go to dev" folder
