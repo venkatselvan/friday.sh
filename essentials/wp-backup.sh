@@ -27,12 +27,11 @@ echo -e "${GREEN}Exporting SQL to temp directory"
 echo -e "${LIGHTGREEN}Please enter your mysql username"
 read mysql_user
 
-echo $tmp_dir
 echo -e "${LIGHTGREEN}Please enter your mysql password"
 sudo mysqldump -u $mysql_user -p $db > "$tmp_dir/$db.sql"
 
 echo -e "${GREEN}Creating $out from temp directory"
-sudo zip -r $out "$tmp_dir/$db.zip" "$tmp_dir/$db.sql"
+sudo zip -r -j $out "$tmp_dir/$db.zip" "$tmp_dir/$db.sql"
 
 echo -e "${GREEN}Cleaning up temp files"
 rm -rf $tmp_dir
